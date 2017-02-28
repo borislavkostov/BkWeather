@@ -6,12 +6,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>BKWeather</title>
     </head>
     <body>
         <%Current weather=WeatherGetter.Weather();%>
-        <%=weather.getCity().getName()%>
-        <%=weather.getCity().getCountry()%>
-        <%=weather.getTemperature().getValue()%>
-        <%=weather.getWeather().getIcon()%>
+        <h1><%=weather.getCity().getName()%></h1>
+        <p>Country code: <%=weather.getCity().getCountry()%><br>Temperature:<%=weather.getTemperature().getValue()%> 
+            <img src="http://openweathermap.org/img/w/<%=weather.getWeather().getIcon()%>.png"></p>
+        
 </html>
