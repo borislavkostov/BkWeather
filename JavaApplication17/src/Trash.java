@@ -1,22 +1,20 @@
 
-
-
-
-
-import com.oracle.jrockit.jfr.Transition;
-import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import weather.*;
+
 public class Trash {
-    public static void main(String args[]) throws JAXBException{
+
+    public static void main(String args[]) throws JAXBException, MalformedURLException {
         String url = "http://api.openweathermap.org/data/2.5/weather?id=727011&cnt=10&appid=7330bff2928c454b01b3d2f40a5f2709&units=metric&mode=xml";
         JAXBContext jc = JAXBContext.newInstance(Current.class);
 
         Unmarshaller unmarshaller = jc.createUnmarshaller();
-        File xml = new File("/home/templars1914/customer.xml");
+        URL xml = new URL(url);
         Current currWeather = (Current) unmarshaller.unmarshal(xml);
         System.out.println(currWeather);
         Marshaller marshaller = jc.createMarshaller();

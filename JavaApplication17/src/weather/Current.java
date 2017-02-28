@@ -8,11 +8,15 @@ public class Current {
 
     private City city;
     private Temperature temperature;
+    private Weather weather;
 
-    public Current() {
+    public void setWeather(Weather weather) {
+        this.weather = weather;
     }
-    
 
+    public Weather getWeather() {
+        return weather;
+    }
     public void setCity(City city) {
         this.city = city;
     }
@@ -32,8 +36,7 @@ public class Current {
 
     @Override
     public String toString() {
-        return city.getName()+city.getCountry()+temperature.getValue(); //To change body of generated methods, choose Tools | Templates.
+        return city.getName() + city.getCountry() + temperature.getValue(); //To change body of generated methods, choose Tools | Templates.
     }
-    
 
 }
