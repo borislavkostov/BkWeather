@@ -9,7 +9,24 @@ public class Current {
     private City city;
     private Temperature temperature;
     private Weather weather;
+    private Wind wind;
+    private Clouds clouds;
 
+    public Clouds getClouds() {
+        return clouds;
+    }
+
+    public void setClouds(Clouds clouds) {
+        this.clouds = clouds;
+    }
+    
+    public Wind getWind() {
+        return wind;
+    }
+
+    public void setWind(Wind wind) {
+        this.wind = wind;
+    }
     public void setWeather(Weather weather) {
         this.weather = weather;
     }
